@@ -1,0 +1,48 @@
+@import '../../style/common.scss';
+
+.shift {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+
+  &__part {
+    padding: 1.5rem 2.5rem;
+  }
+
+  &__delimiter {
+    width: 5px;
+    background-color: $grey;
+  }
+
+  &__left {
+    width: 30%;
+    p:nth-child(1) {
+      font-size: $date-fontsize;
+      font-weight: $bold700;
+      color: $primary-blue;
+    }
+    p:nth-child(4) {
+      font-weight: $bold700;
+      color: $primary-blue;
+    }
+  }
+  
+  &__right {
+    width: 35%;
+    p:nth-child(1) {
+      font-size: $date-fontsize;
+    }
+  }
+  p {
+    line-height: 28px;
+  }
+
+  span {
+    &:after {
+      content: ' ';
+    }
+  }
+  .star {
+    color: $yellow;
+  }
+}
