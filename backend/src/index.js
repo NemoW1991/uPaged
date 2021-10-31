@@ -1,6 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
+const routes = require('./routes');
 
 const app = express();
 
@@ -12,7 +13,9 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors());
 
-app.listen(port,async () => {
+app.use('/',routes);
+
+app.listen(port, async () => {
   console.log(`
   #########################################
     🛡️  Server listening on port: ${port} 🛡️ 
