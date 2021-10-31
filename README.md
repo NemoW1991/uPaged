@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# <h1 align="center">uPaged</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Introduction**:
 
-## Available Scripts
+Based on mockup image, recreate a page that shows available jobs and jobs that you have been invited to.
 
-In the project directory, you can run:
+**Demo**: 
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Table of Contents
+-----------------
+- [About](#about)
+  - [Requirement](#Requirement)
+  - [Build With](#build-with)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Contact Me](#contact-me)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+About
+-------------
 
-### `yarn test`
+### Requirement
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Must:
+- Use React for the front end framework
+- Use Node.JS for the back end framework
+- Use the listed style guide below for colors and fonts to supplement the front end design
+- Be able to click between at least two (2x) weeks to pull fresh data that is relevant to the displayed date
 
-### `yarn build`
+Bonus Points:
+- Use Redux for state management
+- Use SCSS modules
+- Clear comments (hint: don’t go overboard) to explain your code
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Build with
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* [React.js, TypeScript, Scss, etc]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Getting Started
+---------------
 
-### `yarn eject`
+The easiest way to get started is to clone the repository:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+# Get the latest snapshot
+git clone https://github.com/NemoW1991/uPaged.git
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Change directory
+cd uPaged
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+For Frontend
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Change directory
+cd frontend
 
-## Learn More
+In the frontend directory, you can run:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Install dependencies
+npm install
+yarn add
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Then simply start the app
+npm start
+yarn start
 
-### Code Splitting
+# Also simply test the app
+npm test
+yarn test
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Also simply build the app
+npm run build
+yarn build
+```
 
-### Analyzing the Bundle Size
+For Backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Change directory
+cd Backend
 
-### Making a Progressive Web App
+In the backend directory, you can run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Install dependencies
+npm install
+yarn add
 
-### Advanced Configuration
+# Then simply start the app
+node src/index.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+Project Structure
+-----------------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## [Backend(node,express)](./backend)
 
-### `yarn build` fails to minify
+## [Frontend(React,Redux)](./frontend)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Contact Me :smile:
+---------------
+
+E_mail: lya.hwang.au@gmail.com
+
+Program Link: https://github.com/NemoW1991/uPaged.git
+      
