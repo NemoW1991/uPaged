@@ -1,0 +1,16 @@
+@import '../../style/common.scss';
+
+.btn {
+  width: 6em;
+  height: 2.5em;
+  background-color: $primary-blue;
+  cursor: pointer;
+  margin: 0 10px;
+  color: $white;
+}
+
+.hollow {
+  background-color: $white;
+  border: solid $primary-blue 3px;
+  color: $primary-blue;
+}
