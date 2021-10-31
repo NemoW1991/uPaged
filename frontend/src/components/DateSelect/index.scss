@@ -1,0 +1,20 @@
+@import '../../style/common.scss';
+
+.date-select {
+  width: 100%;
+  height: 120px;
+  font-size: $date-fontsize;
+  font-weight: $bold700;
+  text-align: center;
+  line-height: 120px;
+  span {
+    margin: 3px;
+    color: $primary-blue;
+  }
+  .button {
+    width: 10rem;
+    font-size: 2rem;
+    border: none;
+    color: $deepgrey;
+  }
+}
