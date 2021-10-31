@@ -1,10 +1,10 @@
 // Get another date according to the given date,  calculating depends on date to move forward or backward.
 
 module.exports = (startDate, days) => {
-  var dd = new Date(startDate);
-  dd.setDate(dd.getDate() + days);
-  var y = dd.getFullYear();
-  var m = dd.getMonth() + 1 < 10 ? "0" + (dd.getMonth() + 1) : dd.getMonth() + 1;
-  var d = dd.getDate() < 10 ? "0" + dd.getDate() : dd.getDate();
+  let date = new Date(startDate);
+  date.setDate(date.getDate() + days*7);
+  let y = date.getFullYear();
+  let m = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+  let d = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
   return y + "-" + m + "-" + d;
 };
