@@ -14,7 +14,7 @@
   font-weight: $bold700;
   font-size: $p-fontzise;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 0 3rem;
 
   &__logo {
     width: 15%;
@@ -72,7 +72,7 @@
   .ticker {
     position: absolute;
     top: 24px;
-    left: -11px;
+    left: 0;
     color: $green;
     font-size: 1.5rem;
   }
