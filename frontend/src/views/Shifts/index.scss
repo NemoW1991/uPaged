@@ -1,0 +1,49 @@
+@import '../../style//common.scss';
+
+.shifts {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 3rem;
+  background-color: $grey;
+  border-top: solid $lightgrey 2px;
+  font-family: $Montserrat;
+  h1 {
+    font-weight: $bold700;
+    font-size: $h1-fontsize;
+    color: $primary-blue;
+  }
+  h2 {
+    font-weight: $bold500;
+    margin: 15px 0;
+  }
+  &__item {
+    margin: 10px 0;
+    border-radius: 15px;
+    background-color: $white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 150px;
+
+    &--green {
+      background-color: $green;
+    }
+
+    &--blue {
+      background-color: $primary-blue;
+    }
+  }
+  &__item-side {
+    width: 15px;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  &__item-console {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+}
