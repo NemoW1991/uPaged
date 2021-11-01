@@ -12,8 +12,8 @@ Table of Contents
 - [About](#about)
   - [Requirement](#Requirement)
   - [Build With](#build-with)
-- [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
 - [Contact Me](#contact-me)
 
 About
@@ -27,14 +27,51 @@ Must:
 - Use the listed style guide below for colors and fonts to supplement the front end design
 - Be able to click between at least two (2x) weeks to pull fresh data that is relevant to the displayed date
 
-Bonus Points:
+Not Least:
 - Use Redux for state management
 - Use SCSS modules
 - Clear comments (hint: don’t go overboard) to explain your code
 
 ### Build with
 
-* [React.js, TypeScript, Scss, etc]
+* [React, Redux, TypeScript, Scss, Node, Express]
+
+  -  [Backend(node,express)](./backend)
+
+  -  [Frontend(React,Redux)](./frontend)
+
+Project Structure
+-----------------
+    .
+    ├── frontend                    
+    │   ├── public                       
+    │   ├── src 
+    |   |    ├── assets                   
+    │   |    ├── components             
+    │   |    ├── lib                     
+    │   |    ├── store                    
+    │   |    ├── style                    
+    │   |    ├── views                    
+    │   |    ├── App.css                 
+    │   |    ├── App.js                  
+    │   |    ├── global.d.ts              
+    │   |    └── index.js              
+    |   |
+    │   ├── package.json                
+    │   ├── package-lock.json            
+    │   └── tsconfig.json                
+    |   
+    ├── backend                    
+    │   ├── src 
+    |   |    ├── controller               
+    │   |    ├── datastore              
+    │   |    ├── routes                 
+    │   |    ├── util                    
+    │   |    └── index.js               
+    |   |
+    │   ├── package.json                
+    │   └── package-lock.json            
+    └── README.md
 
 Getting Started
 ---------------
@@ -70,7 +107,7 @@ yarn test
 # Also simply build the app
 npm run build
 yarn build
-```
+
 
 For Backend
 
@@ -85,15 +122,6 @@ yarn add
 
 # Then simply start the app
 node src/index.js
-
-
-Project Structure
------------------
-
-## [Backend(node,express)](./backend)
-
-## [Frontend(React,Redux)](./frontend)
-
 
 Contact Me :smile:
 ---------------
