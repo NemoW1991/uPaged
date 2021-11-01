@@ -84,9 +84,10 @@ git clone https://github.com/NemoW1991/uPaged.git
 
 # Change directory
 cd uPaged
-
+```
 For Frontend
 
+```bash
 # Change directory
 cd frontend
 
@@ -107,10 +108,11 @@ yarn test
 # Also simply build the app
 npm run build
 yarn build
-
+```
 
 For Backend
 
+```bash
 # Change directory
 cd Backend
 
@@ -122,9 +124,10 @@ yarn add
 
 # Then simply start the app
 node src/index.js
+```
 
 Contact Me :smile:
----------------
+------------------
 
 E_mail: lya.hwang.au@gmail.com
 
