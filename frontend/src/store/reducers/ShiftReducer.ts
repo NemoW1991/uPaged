@@ -1,11 +1,14 @@
 import {
   SET_SHIFTS,
+  SET_COUNT,
   ShiftsState,
-  ShiftsAction
+  ShiftsAction,
 } from '../types/Shift'
+
 const initialShiftsState: ShiftsState = {
-  start: '',
-  end: '',
+  count: 0,
+  startDateOne: '',
+  startDateTwo: '',
   shiftsOneInvited: [],
   shiftsOneUninvited: [],
   shiftsTwoInvited: [],
@@ -20,12 +23,17 @@ export const getShiftsReducer = (
     case SET_SHIFTS:
       return {
         ...state,
-        start: action.start,
-        end: action.end,
+        startDateOne: action.startDateOne,
+        startDateTwo: action.startDateTwo,
         shiftsOneInvited: action.shiftsOneInvited,
         shiftsOneUninvited: action.shiftsOneUninvited,
         shiftsTwoInvited: action.shiftsTwoInvited,
         shiftsTwoUninvited: action.shiftsTwoUninvited
+      }
+    case SET_COUNT:
+      return {
+        ...state,
+        count: action.count,
       }
     default:
       return state;

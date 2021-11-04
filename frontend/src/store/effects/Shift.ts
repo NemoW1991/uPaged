@@ -4,13 +4,14 @@ import { ShiftsAction } from "../types/Shift";
 import { getAllShifts } from "../../lib/api";
 
 export const getShifts =
-  (startDate: string = "", days: number = 1) =>
+  (startDate: string = "", direction: number = 0) =>
   async (dispatch: Dispatch<ShiftsAction>) => {
-    const res = await getAllShifts(startDate, days);
+    const res = await getAllShifts(startDate, direction);
+    console.log(res.data)
     dispatch(setShiftsAction(
-      res.data[0].start, res.data[1].end,      
-      res.data[2],res.data[3],
-      res.data[4],res.data[5]
+      res.data[0].startDateOne, res.data[1].startDateTwo,      
+      res.data[2].invitedShifts,res.data[2].uninvitedShifts,
+      res.data[3].invitedShifts,res.data[3].uninvitedShifts,
     ));
     return res.data;
   };
