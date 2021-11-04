@@ -1,32 +1,34 @@
 const shifts = require('../dataStore/shifts.json');
-const computeDate = require('../util');
+const {computeDate, getShiftsByInVited} = require('../util');
 
 exports.index = async (req, res) => {
-  const {date, days} = req.query;
+  let {date, direction} = req.query;
 
   try{
     let startDate;
+    // Determine the startDate as base date.
     if(date == ''){
       startDate = shifts[0].date;
+      direction = 1;
     } else {
-      startDate = new Date(date).toISOString().substring(0, 10);
+      startDate = computeDate(date, direction);
     }
 
     // Determine whether the data is out of the bounds, if yes, respond status 404 and message.
-    if(startDate > shifts[shifts.length-1].date && days > 0 || startDate < shifts[0].date && days < 0) {
+    if(startDate > shifts[shifts.length-1].date && direction > 0 || startDate < shifts[0].date && direction < 0) {
       res.status(404).json({
         message: 'No more shifts.'
       });
       return;
     }
 
-    // Get the endDate based on startDate and days (forward or backward)
-    const endDateOne = computeDate(startDate, days);
-    const endDateTwo = computeDate(endDateOne, days);
+    // Get the endDates based on startDate and direction mark (forward or backward)
+    const endDateOne = computeDate(startDate, direction);
+    const endDateTwo = computeDate(endDateOne, direction);
 
     // Determine minDate and maxDate
     let minDate, maxDate;
-    if(days > 0) {
+    if(direction > 0) {
       minDate = startDate,
       maxDate = endDateTwo; 
     } else {
@@ -34,30 +36,15 @@ exports.index = async (req, res) => {
       maxDate = startDate;
     }
 
-    // Get all shifts information between these two dates
-    const shiftsOne = shifts.filter(shift => {
-      let date = new Date(shift.date).toISOString().substring(0, 10);
-      return (minDate < date && date <= endDateOne);
-    });
-
-    const resultOne = shiftsOne.filter(shift => shift.isInvited === true);
-    const resultTwo = shiftsOne.filter(shift => shift.isInvited === false)
-
-    const shiftsTwo = shifts.filter(shift => {
-      let date = new Date(shift.date).toISOString().substring(0, 10);
-      return (endDateOne < date && date <= maxDate);
-    });
-
-    const resultThree = shiftsTwo.filter(shift => shift.isInvited === true);
-    const resultFour = shiftsTwo.filter(shift => shift.isInvited === false)
+    // Get invited and uninvited shifts information between these two dates
+    const shiftsOne = getShiftsByInVited(minDate, endDateOne, shifts)
+    const shiftsTwo =  getShiftsByInVited(endDateOne, maxDate, shifts)
 
     const result = [];
-    result.push({"start": minDate});
-    result.push({"end": endDateOne});
-    result.push(resultOne);
-    result.push(resultTwo);
-    result.push(resultThree);
-    result.push(resultFour);
+    result.push({"startDateOne": minDate});
+    result.push({"startDateTwo": endDateOne});
+    result.push(shiftsOne);
+    result.push(shiftsTwo);
 
     res.status(200).json(result);
   } catch(err) {
