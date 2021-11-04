@@ -7,4 +7,4 @@ export const API_URL = `${BASE_URL}`;
 axios.defaults.baseURL = API_URL;
 
 
-export const getAllShifts = (startDate: string, days: number) => axios.get(`/shifts?date=${startDate}&days=${days}`);
+export const getAllShifts = (startDate: string, direction: number) => axios.get(`/shifts?date=${startDate}&direction=${direction}`);

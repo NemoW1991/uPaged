@@ -9,7 +9,7 @@ const Shift: React.FC<{
 }> = ({
   shift
 }) => {
-  const {dateOfDay, date,startTime, endTime, careType, salary, hospital, starRate, street, state } = shift;
+  const {dateOfDay, date, startTime, endTime, careType, salary, hospital, starRate, street, state } = shift;
   return (
     <div className='shift'>
       <div className='shift__left shift__part'>
@@ -22,8 +22,8 @@ const Shift: React.FC<{
       <div className='shift__right shift__part'>
         <p>{hospital}</p>
         <p>
-          {[...Array(starRate)].map((star, index) => 
-            <FontAwesomeIcon className='star' key={index} icon={faStar} />
+          {[...Array(starRate)].map((star) => 
+            <FontAwesomeIcon className='star' key={star} icon={faStar} />
         )}
         </p>
         <p>{street}</p>

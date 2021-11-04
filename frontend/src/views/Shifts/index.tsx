@@ -10,9 +10,8 @@ import './index.scss';
 
 const Shifts: React.FC = () => {
 
-  const {count} = useSelector((state: AppState) => state.count)
+  const {count} = useSelector((state: AppState) => state.shifts)
   const {
-    start,
     shiftsOneInvited, 
     shiftsOneUninvited,
     shiftsTwoInvited,
@@ -27,7 +26,6 @@ const Shifts: React.FC = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    console.log(start)
     if(count === 0) {
       setInvitedShifts(shiftsOneInvited);
       setUninvitedShifts(shiftsOneUninvited)
@@ -45,9 +43,9 @@ const Shifts: React.FC = () => {
 
       {/* Invited Shifts Item */}
       {invitedShifts.map((shift)=>
-        <div className='shifts__item' key={shift.id}>
+        <div key={shift.id} className='shifts__item'>
           <div className='shifts__item-side shifts__item--green'></div>
-          <Shift key={shift.id} shift={shift} />
+          <Shift shift={shift} />
           <div className='shifts__item-console'>
             <Button buttonText='decline' hollow={true} />
             <Button buttonText='apply' />
@@ -59,9 +57,9 @@ const Shifts: React.FC = () => {
       
       {/* Shifts Item */}
       {uninvitedShifts.map((shift)=>
-        <div className='shifts__item' key={shift.id}>
+        <div key={shift.id} className='shifts__item' >
           <div className='shifts__item-side shifts__item--blue'></div>
-          <Shift key={shift.id} shift={shift} />
+          <Shift shift={shift} />
           <div className='shifts__item-console'>
             <Button buttonText='apply' />
           </div>
